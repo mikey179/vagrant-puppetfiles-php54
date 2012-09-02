@@ -16,12 +16,12 @@ class php54 {
     }
 
     package { 'php5-cli':
-        ensure => present,
+        ensure  => present,
         require => Exec['apt-get update 2'],
     }
 
     package { 'php5-xdebug':
-        ensure => present,
+        ensure  => present,
         require => Package['php5-cli'],
     }
 
@@ -31,13 +31,13 @@ class php54 {
     }
 
     file { '/etc/php5/mods-available/date.ini':
-        ensure => file,
-        require => Package['php5-cli'],
+        ensure  => file,
         content => 'date.timezone = "Europe/Berlin"',
+        require => Package['php5-cli'],
     }
 
     file { '/etc/php5/conf.d/10-date.ini':
-        ensure => link,
+        ensure  => link,
         target => '/etc/php5/mods-available/date.ini',
     }
 }

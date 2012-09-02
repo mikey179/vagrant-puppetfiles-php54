@@ -4,13 +4,13 @@ class basic {
     }
 
     package { 'vim':
-        ensure => present,
+        ensure  => present,
         require => Exec['apt-get update'],
     }
 
     file { '/home/vagrant/workspace':
         ensure => link,
-        owner  => 'vagrant',
         target => '/vagrant',
+        owner  => 'vagrant',
     }
 }

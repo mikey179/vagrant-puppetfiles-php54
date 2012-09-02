@@ -7,8 +7,8 @@ In the folder where you like to set up the VM:
 
 In your Vagrantfile, add
 
-    config.vm.provision :puppet, :module_path => 'puppet/modules'  do |puppet|
-      puppet.manifests_path = "puppet/manifests"
+    config.vm.provision :puppet, :module_path => 'vagrant-puppetfiles-php54/modules'  do |puppet|
+      puppet.manifests_path = "vagrant-puppetfiles-php54/manifests"
       puppet.manifest_file  = "default.pp"
     end
 

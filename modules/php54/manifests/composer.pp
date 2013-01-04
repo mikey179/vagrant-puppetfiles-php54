@@ -15,6 +15,7 @@ class php54::composer {
     command => '/usr/bin/curl -s http://getcomposer.org/installer | /usr/bin/php -- --install-dir=/home/vagrant/bin',
     path    => '/home/vagrant/bin',
     require => Package['php5-cli'],
+    creates => '/home/vagrant/bin/composer.phar'
   }
 
   file { '/home/vagrant/bin/composer.phar':

@@ -37,7 +37,7 @@ class php54 {
     require => Package['php5-cli'],
   }
 
-  file { '/etc/php5/conf.d/10-date.ini':
+  file { '/etc/php5/cli/conf.d/10-date.ini':
     ensure  => link,
     target => '/etc/php5/mods-available/date.ini',
   }
